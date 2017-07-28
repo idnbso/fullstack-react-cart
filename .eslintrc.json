@@ -1,0 +1,23 @@
+{
+  "extends": "google",
+  "rules": {
+    "no-unused-vars": "off",
+    "object-curly-spacing": "off",
+    "linebreak-style": "off",
+    "valid-jsdoc": "off",
+    "eol-last": "off",
+    "no-trailing-spaces": "off",
+    "array-bracket-spacing": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": [
+    "react"
+  ]
+}

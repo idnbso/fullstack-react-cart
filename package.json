@@ -10,6 +10,9 @@
     "webpack": "^3.4.1"
   },
   "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-react": "^7.1.0",
     "nodemon": "^1.11.0"
   }
 }
