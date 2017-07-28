@@ -9,11 +9,9 @@ const client = new Client({
 
 const connectToDB = async () => {
     await client.connect();
-
-    console.log('Connected to PostgresSQL database...');
 };
 
 connectToDB()
-    .then(() => {});
+    .then(() => console.log('Connected to PostgresSQL database...'));
 
 export default client;

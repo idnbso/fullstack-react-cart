@@ -10,6 +10,7 @@
   "author": "idnbso <idanbusso@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-cli": "^6.24.1",
     "babel-loader": "^7.1.1",
     "babel-preset-latest": "^6.24.1",

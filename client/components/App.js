@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import BookList from './BookList';
 
@@ -13,19 +14,30 @@ class App extends Component {
         super();
 
         this.state = {
-            answer: 42,
+            books: [],
         };
     }
 
     /**
+     * Runs after the component is mounted on the DOM.
+     */
+    async componentDidMount() {
+        const response = await axios.get('http://localhost:8080/api/books/');
+        const books = response.data;
+        this.setState({ books });
+    }
+
+    /**
      * Renders the App component with JSX.
-     * @returns {HTML} - the html component
+     * @returns {XML} - the html component
      */
     render() {
+        const { books } = this.state;
+
         return (
             <div>
-                <h2>Hello from component {this.state.answer}</h2>
-                <BookList/>
+                <h2>The Books List</h2>
+                <BookList books={books}/>
             </div>
         );
     }

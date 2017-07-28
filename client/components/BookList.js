@@ -5,61 +5,20 @@ import Book from './Book';
 /**
  * Book list class component is the root component of the application.
  */
-class BookList extends Component {
-    /**
-     * Book list class component constructor.
-     */
-    constructor() {
-        super();
+const BookList = ({ books }) => {
+    return (
+        <div>
+            {renderBooks(books)}
+        </div>
+    );
+};
 
-        this.state = {
-            books: [
-                {
-                    title: 'Harry Potter',
-                    author: 'JK Rolling',
-                    description: 'This is the first Harry Potter book',
-                },
-                {
-                    title: 'Harry Potter II',
-                    author: 'JK Rolling',
-                    description: 'This is the second Harry Potter book',
-                },
-                {
-                    title: 'Harry Potter III',
-                    author: 'JK Rolling',
-                    description: 'This is the third Harry Potter book',
-                },
-            ],
-        };
-    }
-
-    /**
-     * Renders the books stored in the current state of the component.
-     */
-    renderBooks() {
-        return this.state.books.map((book, index) => {
-            return (
-                <Book
-                    key={index}
-                    title={book.title}
-                    author={book.author}
-                    description={book.description}
-                />
-            );
-        });
-    }
-
-    /**
-     * Renders the Book list component with JSX.
-     * @returns {HTML} - the html component
-     */
-    render() {
+const renderBooks = (books) => {
+    return books.map((book, index) => {
         return (
-            <div>
-                {this.renderBooks()}
-            </div>
+            <Book key={index} {...book} />
         );
-    }
-}
+    });
+};
 
 export default BookList;
