@@ -10,11 +10,11 @@ class App extends Component {
     /**
      * App class component constructor.
      */
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
-            books: [],
+            books: this.props.initialData,
         };
     }
 

@@ -6,10 +6,10 @@
 </head>
 <body>
 
-<div id="root">
-    <%- content %>
-</div>
-
+<div id="root"><%- markup %></div>
+<script>
+    window.__initialData__ = '<%- JSON.stringify(initialData) %>';
+</script>
 <!-- Project Source Code -->
 <script src="/bundle.js" charset="utf-8"></script>
 </body>
