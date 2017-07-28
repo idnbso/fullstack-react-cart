@@ -4,5 +4,12 @@
   "main": "index.js",
   "repository": "https://github.com/idnbso/fullstack-react-cart.git",
   "author": "idnbso <idanbusso@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3",
+    "webpack": "^3.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }
