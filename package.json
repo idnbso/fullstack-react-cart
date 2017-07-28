@@ -3,10 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/idnbso/fullstack-react-cart.git",
+  "scripts": {
+    "webpack": "webpack -wd"
+  },
   "author": "idnbso <idanbusso@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.1.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "express": "^4.15.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "webpack": "^3.4.1"
   },
   "devDependencies": {
