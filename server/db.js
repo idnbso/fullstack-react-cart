@@ -10,10 +10,10 @@ const client = new Client({
 const connectToDB = async () => {
     await client.connect();
 
-    const res = await client.query('SELECT * from books', []);
-
-    console.log(res.rows);
+    console.log('Connected to PostgresSQL database...');
 };
 
 connectToDB()
     .then(() => {});
+
+export default client;
