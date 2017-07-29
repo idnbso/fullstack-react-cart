@@ -15,6 +15,7 @@ class App extends Component {
 
         this.state = {
             books: this.props.initialData,
+            reviews: {},
         };
     }
 
@@ -28,6 +29,25 @@ class App extends Component {
     }
 
     /**
+     * Fetches the rating for a selected book by its id value.
+     * @param bookId - the id value of the book
+     * @returns {Promise.<void>} - the promise after the book is fetched
+     */
+    async fetchReviewsForBook(bookId) {
+        if (this.state.reviews[ bookId ]) {
+            return;
+        }
+
+        const response = await axios.get(`http://localhost:8080/api/books/${bookId}/reviews`);
+        const reviews = response.data;
+        this.setState((prevState) => {
+            const currentReviews = prevState.reviews;
+            currentReviews[ bookId ] = reviews;
+            return { reviews: currentReviews };
+        });
+    }
+
+    /**
      * Renders the App component with JSX.
      * @returns {XML} - the html component
      */
@@ -37,7 +57,10 @@ class App extends Component {
         return (
             <div>
                 <h2>The Books List</h2>
-                <BookList books={books}/>
+                <BookList
+                    books={books}
+                    onBookClick={this.fetchReviewsForBook.bind(this)}
+                />
             </div>
         );
     }

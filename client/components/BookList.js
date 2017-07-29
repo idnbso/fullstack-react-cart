@@ -5,18 +5,22 @@ import Book from './Book';
 /**
  * Book list class component is the root component of the application.
  */
-const BookList = ({ books }) => {
+const BookList = (props) => {
     return (
         <div>
-            {renderBooks(books)}
+            {renderBooks(props)}
         </div>
     );
 };
 
-const renderBooks = (books) => {
+const renderBooks = ({ books, onBookClick}) => {
     return books.map((book, index) => {
         return (
-            <Book key={index} {...book} />
+            <Book
+                key={index}
+                onBookClick={onBookClick}
+                book={book}
+            />
         );
     });
 };
